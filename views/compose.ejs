@@ -1,0 +1,24 @@
+<%- include("partials/header"); -%>
+
+<h1>Compose</h1>
+<form class="" action="/compose" method="post">
+  <label>QuestionTopic</label>
+  <input class="form-control" type="text" name="qTopic"> 
+  <div class="form-group">
+    <label>QuestionDifficulty</label>
+    <input class="form-control" type="number" name="qDiff">    
+    <label>QuestionName</label>
+    <input class="form-control" type="text" name="qName">
+    <label>HyperLink</label>
+    <input class="form-control" type="text" name="hLink">
+    <label>Hint</label>
+    <input class="form-control" type="text" name="hint">
+    <label>Solution</label>
+    <input class="form-control" type="text" name="qSol">
+    <label>State</label>
+    <input class="form-control" type="number" name="qState">
+  </div>
+  <button class="btn btn-primary" type="submit" name="button">Publish</button>
+</form>
+
+<%- include("partials/footer"); -%>

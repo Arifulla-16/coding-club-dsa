@@ -1,0 +1,43 @@
+
+<%- include("partials/header"); -%>
+<h1> Lets Work on <b>Linked List</b> this week </h1>
+
+<% var prev = -1 %>
+<h2>Questions : </h2>
+<hr>
+<% for(var i = 0;i<Questions.length;i++){ %>
+  <% if(Questions[i].state!=0){ %>
+    <% continue %>
+  <% } %>
+  <% if(prev!=Questions[i].diff) { %>
+    <hr>
+    <% if(Questions[i].diff==1){ %>
+        <h4><b>(Easy)</b></h4>
+        <% prev = 1 %>
+    <% } %>
+    <% if(Questions[i].diff==2){ %>
+        <h4><b>(Medium)</b></h4>
+        <% prev = 2 %>
+    <% } %>
+    <% if(Questions[i].diff==3){ %>
+        <h4><b>(Hard)</b></h4>
+        <% prev = 3 %>
+    <% } %>   
+  <% } %>
+
+  <h3> Q) <%= Questions[i].name%></h3>
+  <p>
+      <%= Questions[i].hint.substring(0,1000) + "..."%>
+      <a href="/post/<%= Questions[i].name%>"><b>Click Here</b></a>
+  </p>
+  <hr>
+<% } %>
+
+<div id="down">
+  <form action="/homePrevious" method="post">
+    <label><h2>Click here for Previous Weeks Questions :</h2></label>
+    <button class="btn btn-primary" type="submit" name="qName" value = "<%= Questions %>" >Click</button>
+  </form>
+</div>
+
+<%- include("partials/footer"); -%>

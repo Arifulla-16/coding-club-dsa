@@ -1,0 +1,12 @@
+<%- include("partials/header"); -%>
+
+<% for(var i = 0;i<Comments.length;i++){ %>
+    
+    <h3><%= Comments[i].name%>  <%= Comments[i].rollNo%></h3>
+    <p>
+        <%= Comments[i].content %>
+    </p>
+
+<% } %>
+
+<%- include("partials/footer"); -%>

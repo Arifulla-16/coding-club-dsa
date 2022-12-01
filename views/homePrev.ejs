@@ -1,0 +1,36 @@
+
+<%- include("partials/header"); -%>
+<h1> <%= TopicName %> </h1>
+<hr>
+<% var prev = -1 %>
+<% var prev2 = 0 %>
+<% for(var i = 0;i<Questions.length;i++){ %>
+  <% if(Questions[i].state==0){ %>
+    <% continue %>
+  <% } %>
+  <% if(prev2!=Questions[i].state) { %>
+    <% prev2 = Questions[i].state %>
+    <h1 display><%= Questions[i].topic %></h1>
+    <hr>
+  <% } %>
+    <h3 class="tempH3"><%= Questions[i].name%></h3>
+    <% if(Questions[i].diff==1){ %>
+        <h4>(Easy)</h4>
+        <% prev = 1 %>
+    <% } %>
+    <% if(Questions[i].diff==2){ %>
+        <h4>(Medium)</h4>
+        <% prev = 2 %>
+    <% } %>
+    <% if(Questions[i].diff==3){ %>
+        <h4>(Hard)</h4>
+        <% prev = 3 %>
+    <% } %>   
+  <p>
+      <%= Questions[i].hint.substring(0,1000) + "..."%>
+      <a href="/post/<%= Questions[i].name%>"><b>Click Here</b></a>
+  </p>
+  <hr>
+<% } %>
+
+<%- include("partials/footer"); -%>

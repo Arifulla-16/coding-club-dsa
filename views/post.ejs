@@ -1,0 +1,50 @@
+<%- include("partials/header"); -%>
+
+  <h3><%=que.topic%></h3>
+  <h1>Q) <%=que.name%></h1>
+  <% if(que.diff==1){ %>
+      <h4>(Easy)</h4>
+      <% prev = 1 %>
+  <% } %>
+  <% if(que.diff==2){ %>
+      <h4>(Medium)</h4>
+      <% prev = 2 %>
+  <% } %>
+  <% if(que.diff==3){ %>
+      <h4>(Hard)</h4>
+      <% prev = 3 %>
+  <% } %>  
+  <hr>
+  <h4><b>PreRequisites and Hints : </b></h4>
+  <p><%=que.hint%></p>
+  <hr>
+  <h4><b>Question Link : </b></h4>
+  <a href= <%=que.link%> >Link to Question</a>
+  <hr>
+  <h4><b>Optimal Solution Links : </b> (Opens only after current week)</h4>
+  <a href= <%=que.solution%> >Link to Solution</a>
+  <hr>
+  <div>
+    <form action="/commentPre" method="post">
+      <label><h4><b>Comments : </b></h4></label>
+      <button class="btn btn-primary" type="submit" name="quesName" value = "<%= que.name %>" >Click</button>
+    </form>
+  </div>
+  <hr>
+  <div>
+    <form action="/commentCreate" method="post">
+      <label><h4><b>Click Here to add your comment :</b></h4></label>
+      <h5>(Feel free to post any doubts or anything related to question)</h5>
+      <div class="form-group">
+        <label>Your Name : </label>
+        <input class="form-control" type="text" name="yName">    
+        <label>Roll No :</label>
+        <input class="form-control" type="text" name="yRoll">
+        <label>Comment :</label>
+        <textarea class="form-control" name="yComment" rows="5" cols="30"></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit" name="quesName" value = "<%= que.name %>"  >Publish</button>
+    </form>
+  </div>
+ <hr>
+<%- include("partials/footer"); -%>
