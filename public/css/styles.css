@@ -1,6 +1,16 @@
-.container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
+body{
+  font-family : "Baskervville";
+  font-size :medium;
+}
+
+#testimonial{
+  background-color: #fff;
+  font-weight: 700;
+  text-align : center;
+}
+
+h3{
+  font-weight :bold;
 }
 .navbar {
     padding-top: 15px;
@@ -10,12 +20,20 @@
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
-    background-color :#89b0b3
+    background-color : #5F4B8BFF;
 }
 .navbar-nav  li a:hover {
     color: #000000 !important;
 }
 
+.tempNav{
+  display : flex;
+  align-items: right;
+}
+
+.nav-item{
+  padding: 0 40px;
+}
 .footer-padding {
 	padding-bottom: 5%;
 }
@@ -26,7 +44,7 @@
   bottom : 0;
   width: 100%;
 	height: 60px;
-	background-color: #0f4050;
+	background-color: #E69A8DFF;
 }
 
 .footer p {
@@ -38,6 +56,13 @@
 hr{
   background-color: #fff;
   border-top: 2px dashed #000;
+}
+
+#testimonials{
+  padding: 7% 15%;
+  background-color:whitesmoke;
+  color : black;
+  text-align: center;
 }
 
 .tempH3{
